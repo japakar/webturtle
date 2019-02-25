@@ -8,8 +8,7 @@ In order to implement the miner to your website you have to do the following, ea
   `<script src='turtleminer.js'></script>`  
     
  - Edit the configuration
-   ```
-  const minerConfig = {  
+  ```const minerConfig = {  
       pool: "herominers",	// pool name; available: mine2gether, minerrocks, hashvault, cryptopool, semipool, turtlepool, herominers  
       wallet: "TRTLv198neLLCadgT3rzAnepD9aDf4MMC33MDMbkkELJcRAiZyH35fL3qG7xjJDSUCGCRJFWwxyvNDCwxy8kVpbFTsx654w8PEJ", // your wallet address. This one is for donations  
       minerName: "WebMiner"	// the miner name also knows as 'password' for the pool, default 'x'  
