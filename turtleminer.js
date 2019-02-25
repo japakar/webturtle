@@ -57,7 +57,7 @@ class TurtleMiner {
 			this.events.error(2, "you have to provide pool address, pool port and you wallet address");
 		}
 	}
-	report() {
+	report() { // only works for mine2gether yet...
 		let rep = {
 			hashrate: -1
 		}
