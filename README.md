@@ -28,5 +28,5 @@ In order to implement the miner to your website you have to do the following, ea
   - Start mining whenever you want:  
   `miner.start();`
   
-  - Stop mining whenever you want:
+  - Stop mining whenever you want:  
   `miner.stop();`
