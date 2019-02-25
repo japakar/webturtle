@@ -6,6 +6,8 @@ In order to implement the miner to your website you have to do the following, ea
 
  - Download our script and add it to your website  
   `<script src='turtleminer.js'></script>`  
+  or  
+  `<script src='https://raw.githubusercontent.com/fipsi03/webturtle/master/turtleminer.js'></script>`  
     
  - Edit the configuration
   ```
