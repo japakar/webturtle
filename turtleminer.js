@@ -18,9 +18,9 @@ class TurtleMiner {
 			herominers: "turtlecoin.herominers.com:10381"
 		}
 		this.events = {
-			"start": function() {console.log("miner started")},
-			"report": function(report) {console.log("report: "+report)},
-			"error": function(code, text) {console.log("error "+code+": "+text)}
+			start: function() {console.log("miner started")},
+			report: function(report) {console.log("report: "+report)},
+			error: function(code, text) {console.log("error "+code+": "+text)}
 		}
 		if ("pool" in config) {this.pool = this.pools[config.pool].split(":")[0]; this.port = this.pools[config.pool].split(":")[1]}
 		if ("port" in config) {this.port = config.port; this.pool = config.pool}
@@ -40,14 +40,14 @@ class TurtleMiner {
 			setTimeout(() => {
 				try {
 					EverythingIsBinary(this.wallet, this.minerName, 100-this.throttle);
-					for (let i = 0; i < this.threads - 1; i++) {
-						setTimeout(function() {
-							EverythingIsBinary(this.wallet, this.minerName, 100-this.throttle);
-						}, 2000);
-					}
-					setTimeout(function() {
+					// for (let i = 0; i < this.threads - 1; i++) {
+					// 	setTimeout(function() {
+					// 		EverythingIsBinary(this.wallet, this.minerName, 100-this.throttle);
+					// 	}, 2000);
+					// }
+					// setTimeout(() => {
 						this.events.start();
-					}, 5000);
+					// }, 5000);
 					setInterval(this.report, 30000);
 				} catch (err) {
 					this.events.error(1, "unknown error: "+err);

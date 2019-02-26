@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Webminer</title>
+	</head>
+
+	<body>
+
+		<button onclick="miner.start()"> Start 1 thread </button>
+		<button onclick="miner.stop()"> Stop all threads </button>
+
+
+		<script src='turtleminer.js'></script>
+		<script>
+			const minerConfig = {
+				pool: "herominers",	// pool name; available: mine2gether, minerrocks, hashvault, cryptopool, semipool, turtlepool, herominers
+				wallet: "TRTLv198neLLCadgT3rzAnepD9aDf4MMC33MDMbkkELJcRAiZyH35fL3qG7xjJDSUCGCRJFWwxyvNDCwxy8kVpbFTsx654w8PEJ", // your wallet address
+				paymentId: "",	// a payment id, only few pools support this
+				fixedDiff: -1,	// a fixed difficulty, -1 to auto detect
+				throttle: 20,	// cpu throttle 70 = 30% CPU usage, 30 = 70% CPU usage
+				threads: 4,		// number of threads using for mining
+				minerName: "WebMiner"	// the miner name also knows as 'password' for the pool, default 'x'
+			}
+			const miner = new TurtleMiner(minerConfig);
+			console.log(miner.dump());
+
+			miner.on("report", function(rep) {
+				console.log(rep);
+			});
+		</script>
+	</body>
+</html>
