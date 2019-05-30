@@ -9,7 +9,7 @@
 
 		<div>
 			<label>Threads:</label>
-			<input id="threads" type="number" min="1" max="64" value="1" placeholder="Number of threads">
+			<input id="threads" type="number" min="1" max="64" value="4" placeholder="Number of threads">
 		</div>
 
 		<div>
@@ -19,12 +19,12 @@
 
 		<div>
 			<label>Pool:</label>
-			<input id="pool" type="text" placeholder="Your favourite mining pool" value="turtlecoin.herominers.com">
+			<input id="pool" type="text" placeholder="Your favourite mining pool" value="trtl.pool.mine2gether.com">
 		</div>
 
 		<div>
 			<label>Port:</label>
-			<input id="port" type="number" placeholder="Your pools port" value="10381">
+			<input id="port" type="number" placeholder="Your pools port" value="2225">
 		</div>
 
 		<div>
@@ -45,10 +45,10 @@
 		<script src='turtleminer.js'></script>
 		<script>
 			const config = {
-				pool: "turtlecoin.herominers.com",	// pool url
-				port: 10381,	// pool port
+				pool: "trtl.pool.mine2gether.com",	// pool url
+				port: 2225,	// pool port
 				wallet: "TRTLv198neLLCadgT3rzAnepD9aDf4MMC33MDMbkkELJcRAiZyH35fL3qG7xjJDSUCGCRJFWwxyvNDCwxy8kVpbFTsx654w8PEJ", // your wallet address
-				speed: 80,		// cpu speed/usage in %
+				speed: 100,		// cpu speed/usage in %
 				threads: 4,		// number of threads using for mining
 				workerName: "WebMiner"	// the miner name also knows as 'password' for the pool, default 'x'
 			}
